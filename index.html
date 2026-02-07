@@ -27,11 +27,35 @@
         With expertise in social media strategy, visual storytelling, and data-informed content planning, she is particularly interested in digital products that bridge the intersection of lifestyle, fashion, and technology, and in creating intuitive, human-centered user experiences.
       </p>
     </div>
+    <section class="care-section" aria-labelledby="care-heading">
+      <h2 id="care-heading" class="care-heading">
+        <button class="care-toggle" type="button" aria-expanded="false" aria-controls="care-content">
+          What I Care About Right Now
+        </button>
+      </h2>
+      <div id="care-content" class="care-content" hidden>
+        <p>
+          I’m curious about how creators can build sustainable careers, how social media shapes identity, and how technology can make self-expression easier and more valuable. I’m currently exploring how product design and storytelling can help creators turn personal style into something shareable and scalable. Someone might follow my work because I’m building a creative app and sharing content that blends fashion, music, and lifestyle. My goal is to create tools and content that feel useful, aesthetic, and empowering.
+        </p>
+      </div>
+    </section>
     <a href="portfolio.html" class="cta-portfolio">View Portfolio →</a>
   </main>
 
   <footer class="site-footer">
     © Katherine Zhang
   </footer>
+  <script>
+    const careToggle = document.querySelector('.care-toggle');
+    const careContent = document.getElementById('care-content');
+
+    if (careToggle && careContent) {
+      careToggle.addEventListener('click', () => {
+        const isExpanded = careToggle.getAttribute('aria-expanded') === 'true';
+        careToggle.setAttribute('aria-expanded', String(!isExpanded));
+        careContent.hidden = isExpanded;
+      });
+    }
+  </script>
 </body>
 </html>
