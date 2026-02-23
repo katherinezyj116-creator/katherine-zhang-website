@@ -18,16 +18,18 @@
   </header>
 
   <main class="hero">
-    <h1 class="name">Katherine Zhang</h1>
-    <div class="bio">
-      <p>
-        Katherine Zhang is a UI/UX–oriented designer with a background in music, digital content, and fashion projects. She is currently building hands-on experience in user-centered interface design through independent and collaborative projects, including a consumer-facing fashion app where she leads UI design and contributes to product concept development.
-      </p>
-      <p>
-        With expertise in social media strategy, visual storytelling, and data-informed content planning, she is particularly interested in digital products that bridge the intersection of lifestyle, fashion, and technology, and in creating intuitive, human-centered user experiences.
-      </p>
-    </div>
-    <section class="care-section" aria-labelledby="care-heading">
+    <section class="section-card about-section" aria-labelledby="about-heading">
+      <h1 id="about-heading" class="name">Katherine Zhang</h1>
+      <div class="bio">
+        <p>
+          Katherine Zhang is a UI/UX–oriented designer with a background in music, digital content, and fashion projects. She is currently building hands-on experience in user-centered interface design through independent and collaborative projects, including a consumer-facing fashion app where she leads UI design and contributes to product concept development.
+        </p>
+        <p>
+          With expertise in social media strategy, visual storytelling, and data-informed content planning, she is particularly interested in digital products that bridge the intersection of lifestyle, fashion, and technology, and in creating intuitive, human-centered user experiences.
+        </p>
+      </div>
+    </section>
+    <section class="section-card care-section" aria-labelledby="care-heading">
       <h2 id="care-heading" class="care-heading">
         <button class="care-toggle" type="button" aria-expanded="false" aria-controls="care-content">
           What I Care About Right Now
@@ -39,7 +41,7 @@
         </p>
       </div>
     </section>
-    <section class="building-section" aria-labelledby="building-heading">
+    <section class="section-card building-section" aria-labelledby="building-heading">
       <h2 id="building-heading">What I’m Building</h2>
       <p>
         I’m building a wardrobe + outfit planning app that helps people organize what they own and style outfits faster.
@@ -52,7 +54,7 @@
       </p>
       <a href="mailto:katherinezyj116@gmail.com?subject=Join%20the%20list&body=Hi%20Yijing,%20I%E2%80%99d%20like%20to%20join%20your%20list." class="cta-primary">Join the list</a>
     </section>
-    <section class="mpp-section" aria-labelledby="mpp-heading">
+    <section class="section-card mpp-section" aria-labelledby="mpp-heading">
       <h2 id="mpp-heading">Who This Is For</h2>
       <p class="mpp-intro">
         Our Most Passionate Percentile (MPP): the artists who feel the split problem most deeply.
@@ -77,6 +79,7 @@
   <script>
     const careToggle = document.querySelector('.care-toggle');
     const careContent = document.getElementById('care-content');
+    const sectionCards = document.querySelectorAll('.section-card');
 
     if (careToggle && careContent) {
       careToggle.addEventListener('click', () => {
@@ -84,6 +87,20 @@
         careToggle.setAttribute('aria-expanded', String(!isExpanded));
         careContent.hidden = isExpanded;
       });
+    }
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reducedMotion && 'IntersectionObserver' in window && sectionCards.length) {
+      const cardObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            entry.target.classList.toggle('is-visible', entry.isIntersecting);
+          });
+        },
+        { threshold: 0.2, rootMargin: '0px 0px -10% 0px' }
+      );
+
+      sectionCards.forEach((card) => cardObserver.observe(card));
     }
   </script>
 </body>

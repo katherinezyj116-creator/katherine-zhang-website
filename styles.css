@@ -95,9 +95,41 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  gap: clamp(1.1rem, 2.8vw, 1.85rem);
   padding: var(--space-xl) var(--space-md);
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.section-card {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: clamp(1.25rem, 3vw, 1.9rem);
+  border-radius: 16px;
+  border: 1px solid rgba(26, 25, 23, 0.05);
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow:
+    0 8px 22px rgba(26, 25, 23, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
+}
+.section-card.is-visible {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.61);
+  box-shadow:
+    0 12px 28px rgba(26, 25, 23, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+.section-card:hover,
+.section-card:focus-within {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.64);
+  box-shadow:
+    0 14px 34px rgba(26, 25, 23, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
 }
 
 .hero .name {
@@ -106,7 +138,7 @@ a:hover {
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin: 0 0 var(--space-lg);
+  margin: 0 0 var(--space-md);
 }
 
 .hero .bio {
@@ -123,8 +155,8 @@ a:hover {
 }
 
 .mpp-section {
-  margin-top: var(--space-lg);
-  max-width: var(--max-width);
+  margin-top: 0;
+  max-width: 100%;
 }
 .mpp-section h2 {
   margin: 0 0 var(--space-sm);
@@ -153,8 +185,8 @@ a:hover {
 }
 
 .care-section {
-  margin-top: var(--space-lg);
-  max-width: var(--max-width);
+  margin-top: 0;
+  max-width: 100%;
 }
 
 .care-heading {
@@ -222,9 +254,9 @@ a:hover {
 }
 
 .building-section {
-  margin-top: var(--space-md);
-  padding: var(--space-md) 0 0;
-  max-width: var(--max-width);
+  margin-top: 0;
+  padding: 0;
+  max-width: 100%;
 }
 .building-section h2 {
   margin: 0 0 var(--space-md);
