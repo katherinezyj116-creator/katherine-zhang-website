@@ -94,9 +94,9 @@ a:hover {
   min-height: 85vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: var(--space-xl) var(--space-md);
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -123,7 +123,7 @@ a:hover {
 }
 
 .mpp-section {
-  margin-top: var(--space-xl);
+  margin-top: var(--space-lg);
   max-width: var(--max-width);
 }
 .mpp-section h2 {
@@ -188,16 +188,26 @@ a:hover {
 
 .care-content {
   margin-top: var(--space-sm);
+  padding: var(--space-md);
+  border: 1px solid rgba(193, 127, 89, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.45);
   color: var(--color-muted);
   font-size: 1rem;
+  box-shadow:
+    0 12px 28px rgba(26, 25, 23, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -1px 0 rgba(26, 25, 23, 0.06);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 .care-content p {
   margin: 0;
 }
 
 .building-section {
-  margin-top: var(--space-xl);
-  padding: clamp(2.75rem, 8vw, 3.5rem) 0;
+  margin-top: var(--space-md);
+  padding: var(--space-md) 0 0;
   max-width: var(--max-width);
 }
 .building-section h2 {
