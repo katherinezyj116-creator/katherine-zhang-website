@@ -53,19 +53,29 @@ a:hover {
 
 /* ----- Layout ----- */
 .site-header {
-  padding: clamp(1.05rem, 2.4vw, 1.4rem) var(--space-md);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.045);
+  box-shadow: 0 1px 6px rgba(26, 25, 23, 0.018);
+}
+
+.site-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.site-header-content {
+  width: 100%;
+  max-width: var(--max-width);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: var(--space-sm);
-  max-width: 1200px;
-  margin: 0 auto;
-  background: var(--color-bg);
-  border-bottom: 1px solid rgba(26, 25, 23, 0.06);
-  box-shadow: 0 5px 14px rgba(26, 25, 23, 0.04);
-  position: relative;
-  z-index: 5;
+  padding: clamp(0.8rem, 1.8vw, 1rem) 0;
 }
 
 .site-logo {
