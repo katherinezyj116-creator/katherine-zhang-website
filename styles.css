@@ -95,7 +95,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: clamp(1.1rem, 2.8vw, 1.85rem);
+  gap: clamp(1.8rem, 4vw, 2.75rem);
   padding: var(--space-xl) var(--space-md);
   max-width: 1200px;
   margin: 0 auto;
@@ -104,32 +104,23 @@ a:hover {
 .section-card {
   width: 100%;
   max-width: var(--max-width);
-  padding: clamp(1.25rem, 3vw, 1.9rem);
-  border-radius: 16px;
-  border: 1px solid rgba(26, 25, 23, 0.05);
-  background: rgba(255, 255, 255, 0.58);
-  box-shadow:
-    0 8px 22px rgba(26, 25, 23, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  padding: clamp(1.35rem, 3vw, 2rem);
+  border-radius: 14px;
+  border: 1px solid rgba(26, 25, 23, 0.04);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 4px 11px rgba(26, 25, 23, 0.03);
   transition:
     transform var(--transition),
-    box-shadow var(--transition),
-    background var(--transition);
+    box-shadow var(--transition);
 }
 .section-card.is-visible {
   transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.61);
-  box-shadow:
-    0 12px 28px rgba(26, 25, 23, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  box-shadow: 0 6px 14px rgba(26, 25, 23, 0.04);
 }
 .section-card:hover,
 .section-card:focus-within {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.64);
-  box-shadow:
-    0 14px 34px rgba(26, 25, 23, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  box-shadow: 0 7px 17px rgba(26, 25, 23, 0.05);
 }
 
 .hero .name {
@@ -196,56 +187,32 @@ a:hover {
 .care-toggle {
   width: 100%;
   text-align: left;
-  padding: 0.9rem 1rem;
+  padding: 0;
   border: none;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.56);
+  border-radius: 0;
+  background: none;
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 3.5vw, 2rem);
   font-weight: 500;
   line-height: 1.2;
   color: var(--color-text);
   cursor: pointer;
-  box-shadow:
-    0 12px 28px rgba(26, 25, 23, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.72),
-    inset 0 -1px 0 rgba(26, 25, 23, 0.05);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  transition:
-    color var(--transition),
-    box-shadow var(--transition),
-    transform var(--transition),
-    background var(--transition);
+  transition: color var(--transition);
 }
 .care-toggle:hover {
   color: var(--color-accent);
-  transform: translateY(-1px);
-  box-shadow:
-    0 16px 34px rgba(26, 25, 23, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.78),
-    inset 0 -1px 0 rgba(26, 25, 23, 0.06);
 }
 .care-toggle[aria-expanded="true"] {
   color: var(--color-accent);
-  transform: translateY(0);
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow:
-    0 8px 18px rgba(26, 25, 23, 0.09),
-    inset 0 1px 0 rgba(255, 255, 255, 0.82),
-    inset 0 -1px 0 rgba(26, 25, 23, 0.08);
 }
 .care-toggle:focus-visible {
-  outline: none;
-  box-shadow:
-    0 0 0 2px rgba(193, 127, 89, 0.45),
-    0 12px 28px rgba(26, 25, 23, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  outline: 2px solid rgba(193, 127, 89, 0.45);
+  outline-offset: 4px;
 }
 
 .care-content {
   margin-top: var(--space-sm);
-  padding: 0 var(--space-xs);
+  padding: 0;
   color: var(--color-muted);
   font-size: 1rem;
 }
