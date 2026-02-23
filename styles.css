@@ -99,9 +99,11 @@ a:hover {
   padding: 0;
 }
 .nav a {
-  font-size: 0.9rem;
-  font-weight: 400;
-  letter-spacing: 0.015em;
+  font-family: "SF Pro Text", "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.008em;
+  color: rgba(26, 25, 23, 0.88);
 }
 
 /* ----- Home / Bio page ----- */
