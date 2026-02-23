@@ -99,9 +99,9 @@ a:hover {
   padding: 0;
 }
 .nav a {
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.015em;
 }
 
 /* ----- Home / Bio page ----- */
